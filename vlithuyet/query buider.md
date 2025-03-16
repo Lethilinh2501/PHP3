@@ -1,18 +1,18 @@
 ## Các hàm thường dùng
 
 ```php
-$query->get();
-$query->first();
-$query->find();
-$query->value('fieldName');
-$query->pluck('fieldName');
-$query->max('fieldName');
-$query->min('fieldName');
-$query->sum('fieldName');
-$query->avg('fieldName');
-$query->count('fieldName');
-$query->select('fieldName', 'fieldName as shortFieldName');
-$query->distinct();
+$query->get();                                                  // lấy toàn bộ dữ liệu
+$query->first();                                                // lấy bản ghi đầu tiên
+$query->find();                                                 // tìm theo id
+$query->value('fieldName');                                     // lấy giá trị của cột
+$query->pluck('fieldName');                                     // lấy giá trị và trả về một mảng
+$query->max('fieldName');                                       // lấy giá trị lớn nhất 
+$query->min('fieldName');                                       // lấy giá trị nhỏ nhất
+$query->sum('fieldName');                                       //
+$query->avg('fieldName');                                       //
+$query->count('fieldName');                                     //
+$query->select('fieldName', 'fieldName as shortFieldName');     // lấy một trường dữ liệu
+$query->distinct();                                             // loại bỏ dữ liệu trùm
 ```
 
 ## Truy vấn điều kiện
