@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -33,3 +34,13 @@ Route::get('/get-product/{id}/{name?}', [ProductController::class, 'getProduct']
 //Params
 // http://127.0.0.1:8000/update-product?id=4&name=abc
 Route::get('/update-product', [ProductController::class, 'updateProduct']);
+
+// http://127.0.0.1:8000/users/create-user
+Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
+    Route::get('list-users', [UserController::class, 'listUsers'])->name('listUsers');
+    Route::get('add-users', [UserController::class, 'addUsers'])->name('addUsers');
+    Route::post('add-users', [UserController::class, 'addPostUsers'])->name('addPostUsers');
+    Route::get('update-users/{userId}', [UserController::class, 'updateUsers'])->name('updateUsers');
+    Route::post('update-users', [UserController::class, 'updatePostUsers'])->name('updatePostUsers');
+    Route::get('delete-users/{userId}', [UserController::class, 'deleteUsers'])->name('deleteUsers');
+});
