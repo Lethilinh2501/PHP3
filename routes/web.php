@@ -36,11 +36,12 @@ Route::get('/get-product/{id}/{name?}', [ProductController::class, 'getProduct']
 Route::get('/update-product', [ProductController::class, 'updateProduct']);
 
 // http://127.0.0.1:8000/users/create-user
+// get, post, put, delete -> return view(get)
 Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
     Route::get('list-users', [UserController::class, 'listUsers'])->name('listUsers');
     Route::get('add-users', [UserController::class, 'addUsers'])->name('addUsers');
     Route::post('add-users', [UserController::class, 'addPostUsers'])->name('addPostUsers');
     Route::get('update-users/{userId}', [UserController::class, 'updateUsers'])->name('updateUsers');
-    Route::post('update-users', [UserController::class, 'updatePostUsers'])->name('updatePostUsers');
-    Route::get('delete-users/{userId}', [UserController::class, 'deleteUsers'])->name('deleteUsers');
+    Route::put('update-users/{userId}', [UserController::class, 'updatePostUsers'])->name('updatePostUsers');
+    Route::delete('delete-users/{userId}', [UserController::class, 'deleteUsers'])->name('deleteUsers');
 });

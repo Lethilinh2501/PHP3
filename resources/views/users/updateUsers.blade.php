@@ -13,7 +13,9 @@
 <body>
     <div class="container">
         <h1>chỉnh sửa user</h1>
+        {{-- Form: GET | POST --}}
         <form action="{{ route('users.updatePostUsers') }}" method="POST">
+            @method('PUT')
             @csrf
             <input type="hidden" name="idUser" value="{{ $user->id }}">
 
