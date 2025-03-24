@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id'); // tự hiểu int | unsigned | primary key | AI (auto...)
             $table->string('name', 200);
-            $table->float('price', 8, 2); // 12345678.23
+            $table->float('product_price', 8, 2); // 12345678.23
             $table->integer('view');
             $table->timestamps(); // created_at | updated_at
         });
