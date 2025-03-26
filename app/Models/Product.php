@@ -11,4 +11,13 @@ class Product extends Model
     protected $table = 'products';
     public $primaryKey = 'id'; // mặc định id không cần khai báo
     
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(ProductComment::class);
+    }
 }

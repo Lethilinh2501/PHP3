@@ -5,19 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductComment extends Model
+class Student extends Model
 {
     use HasFactory;
-    protected $table = 'product_comment';
+    protected $table = 'students';
     public $primaryKey = 'id'; // mặc định id không cần khai báo
-
     public function user()
     {
-        return $this->belongsTo(User::class, 'userId');
-    }
-
-    public function product()
-    {
-        return $this->belongsTo(Product::class, 'productId');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Log;
 use App\Models\Product;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -14,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory(10)->create();
 
         // User::factory()->create([
         //     'name' => 'Test User',
@@ -23,9 +25,15 @@ class DatabaseSeeder extends Seeder
 
         // gọi nhiều file seeder
         $this->call([
-            // UserSeeder::class
-            // ProductSeeder::class
-            ProductCommentSeeder::class
+            UserSeeder::class,
+            CategorySeeder::class,
+            ProductSeeder::class,
+            ProductCommentSeeder::class,
+            LogSeeder::class,
+            StudentSeeder::class,
+            CourseSeeder::class,
+            EnrollmentSeeder::class,
+
         ]);
     }
 }

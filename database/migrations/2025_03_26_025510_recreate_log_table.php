@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('log', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('content_log');
+            $table->string('content_log', 20);
             $table->timestamps();
         });
     }
